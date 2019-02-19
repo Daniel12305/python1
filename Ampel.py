@@ -70,4 +70,3 @@ button.when_pressed = Fußgänger
     
 pause()
 
-jugvkzgnfhghallo
