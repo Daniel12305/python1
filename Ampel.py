@@ -1,12 +1,12 @@
 import RPi.GPIO as GPIO
 import time
 from signal import pause
-from gpiozero import Button #, Buzzer
+from gpiozero import Button , Buzzer
 
 GPIO.setmode(GPIO.BCM)
 
 button = Button(2)
-#buzzer = Buzzer(18)
+buzzer = Buzzer(18)
 
 # 26 rot Auto
 # 14 gelb Auto
@@ -33,8 +33,6 @@ def Fußgänger():
     time.sleep(2)
     giveGreenToCars()
     
-    
-    
 def giveRedToCars():
     GPIO.output(15, GPIO.LOW)
     GPIO.output(14, GPIO.HIGH)
@@ -46,10 +44,10 @@ def giveGreenToPeds():
     time.sleep(2)
     GPIO.output(21, GPIO.LOW)
     GPIO.output(20, GPIO.HIGH)
-    #buzzer.on()
+    buzzer.on()
     
 def giveRedToPeds():
-    #buzzer.off()
+    buzzer.off()
     GPIO.output(20, GPIO.LOW)
     GPIO.output(21, GPIO.HIGH)
     
@@ -60,13 +58,7 @@ def giveGreenToCars():
     GPIO.output(26, GPIO.LOW)
     GPIO.output(15, GPIO.HIGH)
   
-
 button.when_pressed = Fußgänger
 
-
-
-
-
-    
 pause()
 
