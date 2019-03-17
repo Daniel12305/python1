@@ -50,6 +50,5 @@ class FunktionTest(unittest.TestCase):
     def testMCMLXXXIV(self):
         self.assertEqual(romanNumber(1984), "MCMLXXXIV")
     
-
 if __name__ == "__main__":
     unittest.main()
